@@ -1,0 +1,855 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.sectionMargin{
+    margin: 30px 0px;
+}
+span{
+    color: #F57C00;
+}
+.circle{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #F57C00;
+}
+h6{
+    font-size: 1.2rem;
+}
+h1{
+    margin-bottom: 15px;
+}
+
+.mainDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.centerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+}
+
+/* navbar section */
+
+.navbar {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    height: 12vh;
+    width: 100%;
+    padding: 0px 40px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+}
+
+.navbar-brand {
+    width: 150px;
+}
+
+.navbar-links {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: black;
+    margin: 0 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.navbar-links a:hover {
+    color: #F57C00;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        background-color: #F57C00;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 2000;
+    }
+
+    .navbar-links a {
+        color: white;
+        margin: 10px 0px;
+    }
+
+    .navbar-links a:hover {
+        color: black;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+@media (max-width:400px) {
+    .navbar-brand {
+        width: 130px;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+}
+
+
+/* BANNER */
+.bannerSection {
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+}
+
+.backgroundImage {
+    width: 100% ;
+    height: 100vh ;
+    position: relative;
+    background-image:#222 url('assets/bg-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: bgChange 20s ease-in-out infinite;
+    opacity: 6;
+    z-index: -1;
+    top: 0;
+}
+
+@keyframes bgChange {
+    0% {
+        background-image: url(assets/bg-1.jpg);
+    }
+
+    20% {
+        background-image: url(assets/bg-1.jpg);
+    }
+
+    20.01% {
+        background-image: url(assets/bg-2.jpg);
+    }
+
+    40% {
+        background-image: url(assets/bg-2.jpg);
+    }
+
+    40.01% {
+        background-image: url(assets/bg-3.jpg);
+    }
+
+    60% {
+        background-image: url(assets/bg-3.jpg);
+    }
+
+    60.01% {
+        background-image: url(assets/bg-4.jpg);
+    }
+
+    80% {
+        background-image: url(assets/bg-4.jpg);
+    }
+
+    80.01% {
+        background-image: url(assets/bg-3.jpg);
+    }
+
+    100% {
+        background-image: url(assets/bg-3.jpg);
+    }
+
+}
+
+.overlay {
+    top: 0vh;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.mainBannerDiv {
+    position: absolute;
+    top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+.mainBannerDiv .centerBannerDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.mainBannerDiv .centerBannerDiv .leftBanner {
+    width: 70%;
+    color: white;
+}
+.mainBannerDiv .centerBannerDiv .rightBanner{
+
+    width: 30%;
+    height: 400px;
+    /* background-color: black; */
+    position: relative;
+    padding: 50px;
+}
+.mainBannerDiv .centerBannerDiv .rightBanner .rightMainContent{
+    position: absolute;
+    /* padding: 10%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    color: white;
+    width: 80%;
+    height: 80%;
+    /* background-color: green; */
+}
+.mainBannerDiv .centerBannerDiv .rightBanner .rightMainContent .plusICon{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(200, 199, 199, 0.258);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+.mainBannerDiv .centerBannerDiv .rightBanner .rightMainContent .plusICon:hover{
+    background-color: #F57C00;
+}
+.mainBannerDiv .centerBannerDiv .rightBanner .rightMainContent .first {
+    margin-left: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+.mainBannerDiv .centerBannerDiv .rightBanner .rightMainContent .second {
+   margin-left: 70%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.mainBannerDiv .centerBannerDiv .rightBanner .rightMainContent .third {
+    margin-left: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+.mainBannerDiv .centerBannerDiv .leftBanner h5 {
+    margin-bottom: 50px;
+}
+
+.mainBannerDiv .centerBannerDiv .leftBanner h5 span {
+    color: #F57C00;
+    z-index: 1500;
+}
+
+.mainBannerDiv .centerBannerDiv .leftBanner h1 {
+    font-size: 4rem;
+    margin-bottom: 50px;
+}
+
+.mainBannerDiv .centerBannerDiv .leftBanner h1 span {
+    color: #F57C00;
+    font-family: 'Brush Script MT', cursive;
+}
+
+.mainBannerDiv .centerBannerDiv .leftBanner .leftContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+}
+
+.mainBannerDiv .centerBannerDiv .leftBanner .leftContent button {
+    width: 230px;
+    height: 70px;
+    border: 2px solid #F57C00;
+    border-radius: 35px;
+    margin-right: 20px;
+    background-color: transparent;
+    color: white;
+}
+.mainBannerDiv .centerBannerDiv .leftBanner .leftContent p{
+    line-height: 25px;
+}
+
+@media(max-width:1200px) {
+    .mainBannerDiv .centerBannerDiv .leftBanner{
+        width: 100%;
+    }
+    .mainBannerDiv .centerBannerDiv .rightBanner{
+        display: none;
+    }
+    .mainBannerDiv .centerBannerDiv .rightBanner{
+        display: none;
+    }
+    .mainBannerDiv .centerBannerDiv .leftBanner h1 {
+        font-size: 3rem;
+    }
+    .mainBannerDiv .centerBannerDiv .leftBanner .leftContent p{
+        line-height: 20px;
+    }
+    .mainBannerDiv .centerBannerDiv .leftBanner .leftContent{
+        width: 100%;
+    }
+}
+
+@media(max-width:769px) {
+    .mainBannerDiv .centerBannerDiv .leftBanner .leftContent{
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .mainBannerDiv .centerBannerDiv .leftBanner .leftContent button {
+        width: 250px;
+        height: 40px;
+        border: 2px solid #F57C00;
+        border-radius: 15px;
+        margin-right: 20px;
+        background-color: transparent;
+        color: white;
+    }
+    .mainBannerDiv{
+        top: 10px;
+    }
+}
+@media(max-width:300px){
+
+    .mainBannerDiv .centerBannerDiv .leftBanner .leftContent button{
+        width: 150px;
+    } 
+    .mainBannerDiv .centerBannerDiv .leftBanner h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Service logo section */
+
+.mainLogoDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px 0px;
+}
+.mainLogoDiv .centerLogoDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0px;
+    width: 90%;
+    height: 100%;
+    border-bottom:2px solid #F57C00;
+}
+.mainLogoDiv .centerLogoDiv .logoImgDiv{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media(max-width:1200px){
+    .mainLogoDiv .centerLogoDiv{
+        flex-wrap: wrap;
+    }
+    .mainLogoDiv .centerLogoDiv .logoImgDiv{
+        width: 100%;
+    }
+}
+@media(max-width:769px){
+    .mainLogoDiv .centerLogoDiv .logoImgDiv{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .mainLogoDiv .centerLogoDiv .logoImgDiv div{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* help section */
+
+.helpDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.helpDiv .centerHelpDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 90%;
+}
+.helpDiv .centerHelpDiv .helpHeader{
+    font-size: 2rem;
+}
+.helpDiv .centerHelpDiv .itMainDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.helpDiv .centerHelpDiv .itMainDiv .itData{
+    width: 48%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.helpDiv .centerHelpDiv .itMainDiv .itData .itContent{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 100%;
+    margin-top: 30px;
+    padding: 20px 0px;
+    border-bottom: 2px solid #F57C00;
+}
+.helpDiv .centerHelpDiv .itMainDiv .itData .itLogo{
+    width: 10%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    top: 0;
+}
+.helpDiv .centerHelpDiv .itMainDiv .itData .itService{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+@media(max-width:769px){
+    .helpDiv .centerHelpDiv .itMainDiv{
+        flex-wrap: wrap;
+    }
+    .helpDiv .centerHelpDiv .itMainDiv .itData{
+        width: 100%;
+    }
+    .helpDiv .centerHelpDiv .helpHeader{
+        font-size: 1.5rem;
+    }
+}
+
+/* Discover Section */
+
+.discoverMainDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.discoverMainDiv .discoverCenterDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+    height: 100%;
+}
+.discoverMainDiv .discoverCenterDiv div{
+    margin-bottom: 30px;
+}
+.discoverMainDiv .discoverCenterDiv .dicoverHeading h1{
+    font-size: 3rem;
+}
+.discoverMainDiv .discoverCenterDiv .discoverCards{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.discoverMainDiv .discoverCenterDiv .discoverCards .card{
+    width: 24%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.discoverMainDiv .discoverCenterDiv .discoverCards .card .cardHeading{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+.discoverMainDiv .discoverCenterDiv .discoverCards .card .cardHeading .cardLogo{
+    width: 8%;
+    height: 50%;
+}
+.discoverMainDiv .discoverCenterDiv .discoverCards .card .cardHeading .cardMainData{
+    width: 85%;
+    display: flex;
+    justify-content: flex-start;
+}
+.discoverMainDiv .discoverCenterDiv .discoverLearnMore{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.discoverMainDiv .discoverCenterDiv .discoverLearnMore button{
+    width: 200px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid #F57C00;
+    color: black;
+    border-radius: 25px;
+}
+@media(max-width:769px){
+    .discoverMainDiv .discoverCenterDiv .discoverCards{
+        flex-wrap: wrap;
+    }
+    .discoverMainDiv .discoverCenterDiv .discoverCards .card{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .discoverMainDiv .discoverCenterDiv .dicoverHeading h1{
+        font-size: 2rem;
+    }
+}
+@media(max-width:400px){
+    .discoverMainDiv .discoverCenterDiv .discoverLearnMore{
+        flex-wrap: wrap;
+    }
+    .discoverMainDiv .discoverCenterDiv .discoverLearnMore>div{
+        width: 100%;
+    }
+    .discoverMainDiv .discoverCenterDiv .discoverLearnMore button{
+        width: 150px;
+    }
+}
+
+/* kill section */
+
+.skillMainDiv{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    width: 100%;
+    height: 100%;
+}
+.skillMainDiv .skillCenterDiv{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-between;
+    width: 90%;
+    height: 100%;
+}
+.skillMainDiv .skillCenterDiv>div{
+    margin-bottom: 50px;
+}
+.skillMainDiv .skillCenterDiv>div h2{
+    font-size: 3rem;
+}
+.skillMainDiv .skillCenterDiv .successDiv{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.skillMainDiv .skillCenterDiv .successDiv .card{
+    width: 48%;
+    height: 100%;
+}
+.skillMainDiv .skillCenterDiv .developmentDiv{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.skillMainDiv .skillCenterDiv .developmentDiv .menus{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.skillMainDiv .skillCenterDiv .developmentDiv .menus>div{
+    display: flex;
+    width: 49%;
+    justify-content: space-between;
+}
+.skillMainDiv .skillCenterDiv .developmentDiv .menus .menu{
+    width: 48%;
+    height: 100%;
+    margin-bottom: 70px;
+    justify-content: center;
+}
+.skillMainDiv .skillCenterDiv .developmentDiv .menus .menu h3{
+    margin-top: 40px;
+}
+
+@media (max-width:1200px){
+    .skillMainDiv .skillCenterDiv .developmentDiv .menus{
+        flex-wrap: wrap;
+    }
+    .skillMainDiv .skillCenterDiv .developmentDiv .menus>div{
+        width: 100%;
+    }
+}
+@media (max-width:769px){
+    .skillMainDiv .skillCenterDiv .developmentDiv .menus>div{
+        flex-wrap: wrap;
+    }
+    .skillMainDiv .skillCenterDiv .developmentDiv .menus .menu{
+        width: 100%;
+    }
+    .skillMainDiv .skillCenterDiv>div h2{
+        font-size: 2rem;
+    }
+    .skillMainDiv .skillCenterDiv .successDiv{
+        flex-wrap: wrap;
+    }
+    .skillMainDiv .skillCenterDiv .successDiv .card{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+
+/* Footer Section */
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #151B23;
+    color: white;
+    padding: 30px 0px;
+}
+footer .centerFooter{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+footer .centerFooter .contact{
+    font-size: 2rem;
+}
+footer .centerFooter>div{
+    margin-bottom: 70px;
+}
+footer .centerFooter .contactFields{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+footer .centerFooter .contactFields .field{
+    width: 48%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+footer .centerFooter .contactFields .field>div{
+    margin-bottom: 20px;
+}
+input{
+    margin-top: 40px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgb(103, 103, 103);
+}
+footer .centerFooter .sendButton{
+    width: 100%;
+    height: 100%;
+}
+footer .centerFooter .sendButton button{
+    width: 100%;
+    height: 70px;
+    background-color: #F57C00;
+    border: none;
+    border-radius: 30px;
+    columns: black;
+    font-size: 18px;
+}
+footer .centerFooter .subscribeSection{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 90px;    
+    border-bottom: 2px solid #F57C00;
+}
+footer .centerFooter .subscribeSection .subscribeCard{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+footer .centerFooter .subscribeSection .subscribeCard .apps{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+footer .centerFooter .subscribeSection .subscribeCard .app{
+    width: 48%;
+    height: 100%;
+    background-color: #2e2e2f;
+    border-radius: 10px;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+footer .centerFooter .subscribeSection .subscribeCard .app .logo{
+    width: 20%;
+    /* margin-right: 5px; */
+}
+footer .centerFooter .subscribeSection .subscribeCard .button-1{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    color: rgb(132, 131, 131);
+    border: none;
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
+footer .centerFooter .subscribeSection .subscribeCard .button-2{
+    width: 100%;
+    height: 60px;
+    background-color: #F57C00;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    margin-bottom: 10px;
+}
+footer .centerFooter .socialMedia{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+li{
+    list-style: none;
+}
+li:hover{
+    color: #F57C00;
+}
+footer .centerFooter .socialMedia>div ul{
+    display: flex;
+    gap: 20px;
+}
+footer  .copyright{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    margin-bottom: 0;
+    padding: 30px 0px;
+    color: rgb(102, 100, 100);
+}
+footer  .copyright>div{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 100%;
+}
+@media(max-width:1400px){
+    footer .centerFooter .subscribeSection .subscribeCard .apps{
+        flex-wrap: wrap;
+        width: 300px;
+    }
+    footer .centerFooter .subscribeSection .subscribeCard .app{
+        width: 60%;
+        margin-bottom: 20px;
+    }
+    footer .centerFooter .subscribeSection{
+        flex-wrap: wrap;
+
+    }
+    footer .centerFooter .subscribeSection .subscribeCard{
+        width: 100%;
+        margin-bottom: 40px;
+    }
+}
+@media(max-width:769px){
+    footer .centerFooter .contactFields{
+        flex-wrap: wrap;
+    }
+    footer .centerFooter .contactFields .field{
+        width: 100%;
+    }
+
+    footer .centerFooter .subscribeSection .subscribeCard .apps{
+        width: 250px;
+    }
+    footer .centerFooter .socialMedia{
+        flex-wrap: wrap;
+    }
+    footer .centerFooter .socialMedia>div{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+@media(max-width:400px){
+    footer .centerFooter .socialMedia>div ul{
+        flex-wrap: wrap;
+    }
+    footer  .copyright>div{
+        flex-wrap: wrap;
+    }
+    footer  .copyright>div>div{
+        width: 100%;
+    }
+}
